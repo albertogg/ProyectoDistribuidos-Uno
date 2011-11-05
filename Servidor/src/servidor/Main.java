@@ -72,7 +72,7 @@ class ManejadorDeConexion implements Runnable {
         try {
             // Aqui ira el codigo con un switch/case para ejecutar una accion.
             // accion de guardar, leer, escribir, dependiendo del mensaje
-            // que se reciva.
+            // que se reciba.
             
             
             // Recibimos un mensaje enviado por la red.

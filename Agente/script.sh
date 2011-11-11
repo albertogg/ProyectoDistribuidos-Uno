@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cd ~/Dropbox && cat Getting\ Started.rtf
+cd /Users/albertogg && ls && cd ~/Dropbox/ && ls

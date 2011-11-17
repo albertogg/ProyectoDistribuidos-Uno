@@ -35,7 +35,8 @@ public class Agente {
             // Comandos para leer la salida standard del Terminal.
             Runtime rt = Runtime.getRuntime();
             Process ps = rt.exec("./script.sh");
-            BufferedReader input = new BufferedReader(new InputStreamReader(ps.getInputStream()));
+            BufferedReader input = new BufferedReader(new 
+                                        InputStreamReader(ps.getInputStream()));
 
             String line = null;
             ArrayList<String> listado = new ArrayList<String>();
@@ -49,7 +50,7 @@ public class Agente {
             // Variable utilizada para imprimir el status arrojado por la
             // salida standard del terminal.
             int exitval = ps.waitFor();
-            System.out.println("bolas   " + exitval);
+            System.out.println("valor de salida: " + exitval);
             oos.writeObject(listado);
 
             // Imprime el texto recibido por el servidor.

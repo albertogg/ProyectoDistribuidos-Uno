@@ -23,10 +23,10 @@ public class ImplementacionCliente
        
         
     @Override
-        public String bolas1(String hola) throws RemoteException {
+        public void bolas1(String hola) throws RemoteException {
              this.hola = hola;
              System.out.println(hola);
-             return hola;
+//             return hola;
         }
     
 }

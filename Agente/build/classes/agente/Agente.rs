@@ -1,2 +1,0 @@
-agente.LectorXML
-agente.Agente

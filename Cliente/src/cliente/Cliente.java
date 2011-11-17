@@ -20,7 +20,7 @@ public class Cliente {
         		try {
 			InterfaceCliente h = 
 				(InterfaceCliente) Naming.lookup("rmi://localhost:1099/cliente");
-			System.out.println(h.bolas1("cliente serveeeeer!!"));
+			h.bolas1("cliente serveeeeer!!");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

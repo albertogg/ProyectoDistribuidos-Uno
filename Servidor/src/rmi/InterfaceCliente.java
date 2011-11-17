@@ -12,5 +12,5 @@ import java.rmi.RemoteException;
  * @author albertogg
  */
 public interface InterfaceCliente extends Remote {
-    public String bolas1(String hola)throws RemoteException;
+    public void bolas1(String hola)throws RemoteException;
 }

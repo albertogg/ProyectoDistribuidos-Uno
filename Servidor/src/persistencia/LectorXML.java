@@ -42,7 +42,7 @@ public class LectorXML {
             NodeList nList = doc.getElementsByTagName("info");
             int bb = 0;
             
-            for (int i = 1; i < 20; i++) {
+            for (int i = 1; i < 35; i++) {
                 
                 NodeList inList1 = doc.getElementsByTagName("item" + i);
                 

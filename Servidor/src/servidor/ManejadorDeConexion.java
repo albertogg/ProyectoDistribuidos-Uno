@@ -41,7 +41,7 @@ public class ManejadorDeConexion implements Runnable {
             // Guardamos la data recolectada del Agente
             EscribirXML ex = new EscribirXML();
             ex.writeXMLFile(mensaje);
-
+            System.out.println(mensaje);
 //            LectorXML lx = new LectorXML();
 //            lx.lecturaXML();
 

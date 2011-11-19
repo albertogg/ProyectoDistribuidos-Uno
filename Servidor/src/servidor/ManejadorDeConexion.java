@@ -30,16 +30,16 @@ public class ManejadorDeConexion implements Runnable {
     @Override
     public void run() {
         try {
-            // Aqui ira el codigo con un switch/case para ejecutar una accion.
-            // accion de guardar, leer, escribir, dependiendo del mensaje
-            // que se reciba.
-            
             
             // Recibimos un mensaje enviado por la red.
             ObjectInputStream ois = new ObjectInputStream(
                                                     socket.getInputStream());
             ArrayList mensaje = (ArrayList) ois.readObject();
-            System.out.println("Mensaje Recibido: " + mensaje);
+//            System.out.println("Mensaje Recibido: " + mensaje);
+            
+            //
+            EscribirXML ex = new EscribirXML();
+            ex.writeXMLFile(mensaje);
             
             
             // Leemos un mensaje enviado desde el agente.

@@ -27,12 +27,12 @@ public class LectorXML {
     // efectuar la conexion entre el agente y el servidor.
     // no recibe parametros solo guarda en las variables "ip" y "port"
     // lo leido para poderlas utilizar en la llamada al socket.
-    public void lecturaXML() {
+    public void lecturaXML(String dd) {
 
         try {
             // Direccion del archivo xml, junto con el bloque de codigo para
             // hacer la lectura del archivo.
-            File fXmlFile = new File("archivotz.xml");
+            File fXmlFile = new File(dd);
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbf.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);

@@ -26,59 +26,74 @@ import org.w3c.dom.Element;
  */
 public class EscribirXML {
 
+    public Attr attr;
+    public String dd;
+
     public EscribirXML() {
     }
 
     public void writeXMLFile(ArrayList mensaje) {
-//        System.out.println("Mensaje Recibido: " + mensaje);
+
         int bolas = 1;
+        int ddddd = 1;
         int suma = 0;
+
 
         try {
 
-            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-
-            // root elements
-            Document doc = docBuilder.newDocument();
-            Element rootElement = doc.createElement("system");
-            doc.appendChild(rootElement);
-
-            // staff elements
-            Element staff = doc.createElement("info");
-            rootElement.appendChild(staff);
-
-            Iterator it = mensaje.iterator();
-            while (it.hasNext()) {
-
-                if (bolas == 1) {
-                    Attr attr = doc.createAttribute("id");
-                    attr.setValue(it.next().toString());
-                    staff.setAttributeNode(attr);
+            Iterator ii = mensaje.iterator();
+            while (ii.hasNext()) {
+                if (ddddd == 1) {
+                    dd = ii.next().toString();
+                    System.out.println(dd);
+                    ddddd = ddddd + 1;
                 } else {
-                    // itemz elements
-                    Element itemz = doc.createElement("item"+ suma);
-                    itemz.appendChild(doc.createTextNode(it.next().toString()));
-                    staff.appendChild(itemz);
+                    break;
                 }
-                bolas = 2;
-                suma = suma + 1;
             }
 
+                DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
-            // write the content into xml file
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("archivotz.xml"));
+                // root elements
+                Document doc = docBuilder.newDocument();
+                Element rootElement = doc.createElement("system");
+                doc.appendChild(rootElement);
+
+                // staff elements
+                Element staff = doc.createElement("info");
+                rootElement.appendChild(staff);
+
+                Iterator it = mensaje.iterator();
+                while (it.hasNext()) {
+
+                    if (bolas == 1) {
+                        attr = doc.createAttribute("id");
+                        attr.setValue(it.next().toString());
+                        staff.setAttributeNode(attr);
+                    } else {
+                        // itemz elements
+                        Element itemz = doc.createElement("item" + suma);
+                        itemz.appendChild(doc.createTextNode(it.next().toString()));
+                        staff.appendChild(itemz);
+                    }
+                    bolas = 2;
+                    suma = suma + 1;
+                }
+
+
+                // write the content into xml file
+                TransformerFactory transformerFactory = TransformerFactory.newInstance();
+                Transformer transformer = transformerFactory.newTransformer();
+                DOMSource source = new DOMSource(doc);
+                StreamResult result = new StreamResult(new File(dd + ".xml"));
 
 //             Output to console for testing
 //            StreamResult result = new StreamResult(System.out);
 
-            transformer.transform(source, result);
+                transformer.transform(source, result);
 
-            System.out.println("File saved!");
-
+                System.out.println("File saved!");
         } catch (ParserConfigurationException pce) {
             pce.printStackTrace();
         } catch (TransformerException tfe) {

@@ -75,7 +75,7 @@ public class LectorXML {
                     }
                 }
             }
-            System.out.println(listado);
+//            System.out.println(listado);
         } catch (Exception e) {
             e.printStackTrace();
         }

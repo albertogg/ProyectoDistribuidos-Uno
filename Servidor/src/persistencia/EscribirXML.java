@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package servidor;
+package persistencia;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -32,6 +32,7 @@ public class EscribirXML {
     public void writeXMLFile(ArrayList mensaje) {
 //        System.out.println("Mensaje Recibido: " + mensaje);
         int bolas = 1;
+        int suma = 0;
 
         try {
 
@@ -56,11 +57,12 @@ public class EscribirXML {
                     staff.setAttributeNode(attr);
                 } else {
                     // itemz elements
-                    Element itemz = doc.createElement("item");
+                    Element itemz = doc.createElement("item"+ suma);
                     itemz.appendChild(doc.createTextNode(it.next().toString()));
                     staff.appendChild(itemz);
                 }
                 bolas = 2;
+                suma = suma + 1;
             }
 
 
@@ -68,10 +70,10 @@ public class EscribirXML {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-//            StreamResult result = new StreamResult(new File("C:\\file.xml"));
+            StreamResult result = new StreamResult(new File("archivotz.xml"));
 
 //             Output to console for testing
-            StreamResult result = new StreamResult(System.out);
+//            StreamResult result = new StreamResult(System.out);
 
             transformer.transform(source, result);
 

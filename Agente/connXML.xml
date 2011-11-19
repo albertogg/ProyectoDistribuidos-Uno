@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <direccion>
-	<nodo>
+	<nodo id="1">
 		<ip>127.0.0.1</ip>
 		<puerto>5432</puerto>
 	</nodo>

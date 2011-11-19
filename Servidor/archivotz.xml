@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<system>
+    <info id="server1">
+        <item1> Computer</item1>
+        <item2> 32 bits</item2>
+        <item3> smbios-2.5 dmi-2.5</item3>
+        <item4> Motherboard</item4>
+        <item5> id: 0</item5>
+        <item6> Intel(R) Core(TM)2 Duo CPU T8300 @ 2.40GHz</item6>
+        <item7> Intel Corp.</item7>
+        <item8> 6.7.6</item8>
+        <item9> BIOS</item9>
+        <item10> 128KiB</item10>
+        <item11> System memory</item11>
+        <item12> 496MiB</item12>
+        <item13> BIOS</item13>
+        <item14> innotek GmbH</item14>
+        <item15> VirtualBox (12/01/2006)</item15>
+        <item16> isa pci cdboot bootselect int9keyboard int10video acpi</item16>
+    </info>
+</system>

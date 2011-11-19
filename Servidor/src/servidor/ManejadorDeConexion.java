@@ -4,11 +4,13 @@
  */
 package servidor;
 
+import persistencia.EscribirXML;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
+import persistencia.LectorXML;
 
 /**
  *
@@ -37,9 +39,12 @@ public class ManejadorDeConexion implements Runnable {
             ArrayList mensaje = (ArrayList) ois.readObject();
 //            System.out.println("Mensaje Recibido: " + mensaje);
             
-            //
+            // Guardamos la data recolectada del Agente
             EscribirXML ex = new EscribirXML();
             ex.writeXMLFile(mensaje);
+            
+            LectorXML lx = new LectorXML();
+            lx.lecturaXML();
             
             
             // Leemos un mensaje enviado desde el agente.

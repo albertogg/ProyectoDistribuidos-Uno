@@ -4,6 +4,7 @@
  */
 package agente;
 
+import persistencia.LectorXML;
 import java.net.*;
 import java.io.*;
 import java.util.ArrayList;

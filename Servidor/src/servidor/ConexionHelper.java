@@ -17,7 +17,7 @@ public class ConexionHelper {
 
     public void conexionRMI() {
         try {
-            System.out.println("Entreeeeeeeeee CONEXIONRMI");
+            System.out.println("Establecida la conexion RMI");
             ImplementacionCliente impcl = new ImplementacionCliente();
 
             LocateRegistry.createRegistry(1099);

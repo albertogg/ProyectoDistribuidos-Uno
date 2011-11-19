@@ -7,6 +7,8 @@ package servidor;
 import rmi.InterfaceCliente;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import persistencia.LectorXML;
 
 /**
  *
@@ -15,7 +17,8 @@ import java.rmi.server.UnicastRemoteObject;
 public class ImplementacionCliente 
         extends UnicastRemoteObject implements InterfaceCliente {
     
-    public String hola;
+    public int hola;
+    public ArrayList<String> listado11 = new ArrayList<String>();
     
     	public ImplementacionCliente() throws RemoteException {
 		
@@ -23,10 +26,19 @@ public class ImplementacionCliente
        
         
     @Override
-        public void bolas1(String hola) throws RemoteException {
+        public ArrayList<String> bolas1(int hola) throws RemoteException {
              this.hola = hola;
              System.out.println(hola);
-//             return hola;
+
+             switch (hola) {
+                 case 0:
+                     LectorXML lxml = new LectorXML();
+                     lxml.lecturaXML();
+                     listado11 =lxml.listado;
+                     System.out.println(listado11);
+                
+             }
+             return(listado11);
         }
     
 }

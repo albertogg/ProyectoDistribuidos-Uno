@@ -17,10 +17,11 @@ import java.util.ArrayList;
  *
  * @author albertogg
  */
+
 public class LectorXML {
 
     public String ip;
-    public int port;
+    public ArrayList<String> listado = new ArrayList<String>();
 
     // Metodo encargado de la lectura del XML de direccion y puerto para
     // efectuar la conexion entre el agente y el servidor.
@@ -56,7 +57,6 @@ public class LectorXML {
                 
             }
 
-            ArrayList<String> listado = new ArrayList<String>();
 
             for (int temp = 0; temp < nList.getLength(); temp++) {
 

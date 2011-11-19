@@ -6,11 +6,15 @@ package rmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 /**
  *
  * @author albertogg
  */
 public interface InterfaceCliente extends Remote {
-    public void bolas1(String hola)throws RemoteException;
+    
+    public ArrayList<String> listado1 = new ArrayList<String>();
+    
+    public ArrayList<String> bolas1(int hola) throws RemoteException;
 }

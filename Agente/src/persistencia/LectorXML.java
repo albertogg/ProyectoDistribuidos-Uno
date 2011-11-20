@@ -13,7 +13,7 @@ import org.w3c.dom.Element;
 import java.io.File;
 /**
  *
- * @author albertogg
+ * @author albertogg & carlos fernandes
  */
 public class LectorXML {
         public String ip;

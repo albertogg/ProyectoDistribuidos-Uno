@@ -7,8 +7,6 @@ package servidor;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import rmi.InterfaceCliente;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -18,7 +16,7 @@ import persistencia.LectorXML;
 
 /**
  *
- * @author albertogg
+ * @author albertogg & carlos fernandes
  */
 public class ImplementacionCliente
         extends UnicastRemoteObject implements InterfaceCliente {
@@ -37,9 +35,14 @@ public class ImplementacionCliente
 
             switch (hola) {
                 case 0:
+                    
+                    // Utilizamos un script en el servidor el cual nos busca 
+                    // en el directorio donde se encuetra archivos con el nombre
+                    // del xml para asi poder mandarlo a leer.
                     Runtime rt = Runtime.getRuntime();
                     Process ps = rt.exec("./script1.sh");
-                    BufferedReader input = new BufferedReader(new InputStreamReader(ps.getInputStream()));
+                    BufferedReader input = new BufferedReader(new 
+                                        InputStreamReader(ps.getInputStream()));
 
                     String line = null;
                     ArrayList<String> listadoz = new ArrayList<String>();
@@ -55,7 +58,9 @@ public class ImplementacionCliente
                     int exitval = ps.waitFor();
                     System.out.println("valor de salida: " + exitval);
 
-
+                    // Llamamos a leer xml pasandole como parametro el nombre
+                    // del xml y nos regresa la lista, la cual mandaremos al 
+                    // cliente con toda la informacion.
                     LectorXML lxml = new LectorXML();
                     Iterator ii = listadoz.iterator();
                     while (ii.hasNext()) {
@@ -74,6 +79,8 @@ public class ImplementacionCliente
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+        
+        // Retornamos la lista al cliente.
         return (listado11);
     }
 }

@@ -22,7 +22,7 @@ import org.w3c.dom.Element;
 
 /**
  *
- * @author albertogg
+ * @author albertogg & carlos fernandes
  */
 public class EscribirXML {
 
@@ -40,7 +40,9 @@ public class EscribirXML {
 
 
         try {
-
+            
+            // Buscamos el primer elemento de la lista recibida del cliente
+            // para utilizar ese elemento para llamar asi nuestro archivo xml
             Iterator ii = mensaje.iterator();
             while (ii.hasNext()) {
                 if (ddddd == 1) {
@@ -60,10 +62,12 @@ public class EscribirXML {
                 Element rootElement = doc.createElement("system");
                 doc.appendChild(rootElement);
 
-                // staff elements
+                // info elements
                 Element staff = doc.createElement("info");
                 rootElement.appendChild(staff);
-
+                
+                // iteramos por la lista recibida de del agente para guardarla
+                // en el xml
                 Iterator it = mensaje.iterator();
                 while (it.hasNext()) {
 
@@ -82,13 +86,13 @@ public class EscribirXML {
                 }
 
 
-                // write the content into xml file
+                // escribimos el contenido en el xml
                 TransformerFactory transformerFactory = TransformerFactory.newInstance();
                 Transformer transformer = transformerFactory.newTransformer();
                 DOMSource source = new DOMSource(doc);
                 StreamResult result = new StreamResult(new File(dd + ".xml"));
 
-//             Output to console for testing
+//            salida para pruebas por consola
 //            StreamResult result = new StreamResult(System.out);
 
                 transformer.transform(source, result);

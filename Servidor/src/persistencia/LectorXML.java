@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author albertogg
+ * @author albertogg & carlos fernandes
  */
 
 public class LectorXML {
@@ -42,6 +42,7 @@ public class LectorXML {
             NodeList nList = doc.getElementsByTagName("info");
             int bb = 0;
             
+            // Contamos todos los elementos con tag item para poder leerlos.
             for (int i = 1; i < 35; i++) {
                 
                 NodeList inList1 = doc.getElementsByTagName("item" + i);
@@ -57,7 +58,8 @@ public class LectorXML {
                 
             }
 
-
+            // Recorremos el total de elementos contados para anadirlos a una
+            // lista, la cual le mandaremos al cliente.
             for (int temp = 0; temp < nList.getLength(); temp++) {
 
                 Node nNode = nList.item(temp);

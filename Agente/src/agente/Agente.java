@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author albertogg
+ * @author albertogg & carlos fernandes
  */
 public class Agente {
 

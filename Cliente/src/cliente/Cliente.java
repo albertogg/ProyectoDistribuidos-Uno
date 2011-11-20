@@ -9,7 +9,7 @@ import java.rmi.Naming;
 
 /**
  *
- * @author albertogg
+ * @author albertogg & carlos fernandes
  */
 public class Cliente {
 
@@ -17,12 +17,12 @@ public class Cliente {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        		try {
-			InterfaceCliente h = 
-				(InterfaceCliente) Naming.lookup("rmi://localhost:1099/cliente");
-                        System.out.println(h.bolas1(0));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+        try {
+            InterfaceCliente h =
+                    (InterfaceCliente) Naming.lookup("rmi://localhost:1099/cliente");
+            System.out.println(h.bolas1(0));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

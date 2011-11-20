@@ -11,10 +11,12 @@ import java.rmi.registry.LocateRegistry;
 
 /**
  *
- * @author albertogg
+ * @author albertogg & carlos fernandes
  */
 public class ConexionHelper {
-
+    
+    // Crea la conexion rmi, el puerto y la direccion a la cual se conecta
+    // el cliente via rmi.
     public void conexionRMI() {
         try {
             System.out.println("Establecida la conexion RMI");

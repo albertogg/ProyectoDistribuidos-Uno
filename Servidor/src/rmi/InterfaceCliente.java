@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author albertogg
+ * @author albertogg & carlos fernandes
  */
 public interface InterfaceCliente extends Remote {
 

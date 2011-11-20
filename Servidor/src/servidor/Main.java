@@ -11,7 +11,7 @@ import java.lang.*;
 
 /**
  *
- * @author albertogg
+ * @author albertogg & carlos fernandes
  */
 public class Main {
 

@@ -14,7 +14,7 @@ import persistencia.LectorXML;
 
 /**
  *
- * @author albertogg
+ * @author albertogg & carlos fernandes
  */
 public class ManejadorDeConexion implements Runnable {
 

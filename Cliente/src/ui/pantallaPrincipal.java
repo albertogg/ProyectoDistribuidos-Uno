@@ -54,7 +54,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jButton1.setBounds(520, 30, 94, 29);
+        jButton1.setBounds(340, 20, 94, 29);
         jLayeredPane1.add(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jTextArea1.setColumns(20);
@@ -62,12 +62,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jScrollPane1.setBounds(160, 0, 320, 360);
+        jScrollPane1.setBounds(0, 0, 320, 360);
         jLayeredPane1.add(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenu1.setText("File");
 
-        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setText("Salir");
         jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
@@ -81,7 +82,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jLayeredPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)
+            .add(jLayeredPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 455, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -95,7 +96,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
 
 
-
+        jTextArea1.setText("");
         Cliente cli = new Cliente();
         ArrayList<String> listasd = new ArrayList<String>();
 

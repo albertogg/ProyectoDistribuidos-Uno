@@ -4,6 +4,7 @@
  */
 package cliente;
 
+import java.util.ArrayList;
 import rmi.InterfaceCliente;
 import java.rmi.Naming;
 
@@ -16,13 +17,19 @@ public class Cliente {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public ArrayList<String> arreglolp = new ArrayList<String>();
+
+    public ArrayList<String> iniciarConexion() {
         try {
             InterfaceCliente h =
                     (InterfaceCliente) Naming.lookup("rmi://localhost:1099/cliente");
-            System.out.println(h.bolas1(0));
+            arreglolp = h.bolas1(0);
+            System.out.println(arreglolp);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return arreglolp;
     }
 }

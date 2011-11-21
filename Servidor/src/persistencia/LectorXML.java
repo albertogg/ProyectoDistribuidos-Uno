@@ -32,7 +32,10 @@ public class LectorXML {
         try {
             // Direccion del archivo xml, junto con el bloque de codigo para
             // hacer la lectura del archivo.
-            File fXmlFile = new File(dd);
+            String ruta = System.getProperty("user.home")+File.separator+
+                                                    ".inventario"+File.separator;
+            
+            File fXmlFile = new File(ruta + dd);
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbf.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);

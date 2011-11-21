@@ -1,4 +1,3 @@
 #!/bin/bash
 
-ls | grep server;
-ls | grep are;
+ls /Users/albertogg/.inventario/ | grep server;

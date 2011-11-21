@@ -8,7 +8,6 @@ import java.net.*;
 import java.io.*;
 import java.lang.*;
 
-
 /**
  *
  * @author albertogg & carlos fernandes
@@ -49,6 +48,9 @@ public class Main {
     public static void main(String[] args) {
         ConexionHelper ch = new ConexionHelper();
         ch.conexionRMI();
+
+        String qw = System.getenv("HOME");
+        System.out.println(qw);
 
         Main nuevaConn = new Main();
         nuevaConn.conectorServidor();

@@ -7,7 +7,6 @@ package cliente;
 import java.util.ArrayList;
 import rmi.InterfaceCliente;
 import java.rmi.Naming;
-import ui.PantallaPrincipal;
 
 /**
  *

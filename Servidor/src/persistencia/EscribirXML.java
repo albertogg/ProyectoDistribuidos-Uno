@@ -90,14 +90,27 @@ public class EscribirXML {
                 TransformerFactory transformerFactory = TransformerFactory.newInstance();
                 Transformer transformer = transformerFactory.newTransformer();
                 DOMSource source = new DOMSource(doc);
-                StreamResult result = new StreamResult(new File(dd + ".xml"));
+                
+                File f = new File(System.getProperty("user.home")+
+                                                  File.separator+".inventario");
+                
+                if(f.mkdir()) {
+                    System.out.println("El directorio se creo");
+                } else {
+                    System.out.println("El directorio ya existe");
+                }
+                
+                String ruta = System.getProperty("user.home")+File.separator+
+                                                    ".inventario"+File.separator;
+                System.out.println(ruta);
+                StreamResult result = new StreamResult(new File(ruta + dd + ".xml"));
 
 //            salida para pruebas por consola
 //            StreamResult result = new StreamResult(System.out);
 
                 transformer.transform(source, result);
 
-                System.out.println("File saved!");
+                System.out.println("Archivo Guardado!");
         } catch (ParserConfigurationException pce) {
             pce.printStackTrace();
         } catch (TransformerException tfe) {

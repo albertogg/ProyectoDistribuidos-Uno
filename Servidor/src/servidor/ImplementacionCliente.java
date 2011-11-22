@@ -35,14 +35,13 @@ public class ImplementacionCliente
 
             switch (hola) {
                 case 0:
-                    
+
                     // Utilizamos un script en el servidor el cual nos busca 
                     // en el directorio donde se encuetra archivos con el nombre
                     // del xml para asi poder mandarlo a leer.
                     Runtime rt = Runtime.getRuntime();
                     Process ps = rt.exec("./script1.sh");
-                    BufferedReader input = new BufferedReader(new 
-                                        InputStreamReader(ps.getInputStream()));
+                    BufferedReader input = new BufferedReader(new InputStreamReader(ps.getInputStream()));
 
                     String line = null;
                     ArrayList<String> listadoz = new ArrayList<String>();
@@ -50,7 +49,9 @@ public class ImplementacionCliente
                     //Ciclo para leer todas las lineas de la salida standard.
                     while ((line = input.readLine()) != null) {
                         //                System.out.println(line);
+
                         listadoz.add(line);
+
                     }
 
                     // Variable utilizada para imprimir el status arrojado por la
@@ -64,11 +65,11 @@ public class ImplementacionCliente
                     LectorXML lxml = new LectorXML();
                     Iterator ii = listadoz.iterator();
                     while (ii.hasNext()) {
-                            String dd = ii.next().toString();
-                            System.out.println(dd);
-                            lxml.lecturaXML(dd);
+                        String dd = ii.next().toString();
+                        System.out.println(dd);
+                        lxml.lecturaXML(dd);
                     }
-                    
+
                     listado11 = lxml.listado;
 //                    System.out.println(listado11);
 
@@ -79,7 +80,7 @@ public class ImplementacionCliente
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        
+
         // Retornamos la lista al cliente.
         return (listado11);
     }

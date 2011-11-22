@@ -103,7 +103,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         jTextArea1.setText("");
@@ -112,20 +112,27 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         listasd = cli.iniciarConexion();
         int ttt = listasd.size();
-        System.out.println(ttt);
-        int ret = 0;
-        Iterator ial = listasd.iterator();
-        while (ial.hasNext()) {
-            String qwerty = ial.next().toString();
-            System.out.print(qwerty);
-            jTextArea1.setRows(ret);
-            jTextArea1.append(qwerty + "\n");
-            ret++;
+        if (listasd.isEmpty()) {
+            System.out.print("entre bolas");
+            jTextArea1.setText("Disculpe pero no se ha realizado ninguna"
+                    + "\n actualizacion con el agente. \n"+ ",Debe esperar!");
+        } else {
+
+            System.out.println(ttt);
+            int ret = 0;
+            Iterator ial = listasd.iterator();
+            while (ial.hasNext()) {
+                String qwerty = ial.next().toString();
+                System.out.print(qwerty);
+                jTextArea1.setRows(ret);
+                jTextArea1.append(qwerty + "\n");
+                ret++;
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        
+
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -135,7 +142,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         Help h = new Help();
         h.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     /**
      * @param args the command line arguments
      */

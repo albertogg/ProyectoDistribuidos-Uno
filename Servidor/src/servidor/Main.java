@@ -49,9 +49,6 @@ public class Main {
         ConexionHelper ch = new ConexionHelper();
         ch.conexionRMI();
 
-        String qw = System.getenv("HOME");
-        System.out.println(qw);
-
         Main nuevaConn = new Main();
         nuevaConn.conectorServidor();
     }

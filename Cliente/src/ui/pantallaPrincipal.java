@@ -113,9 +113,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         listasd = cli.iniciarConexion();
         int ttt = listasd.size();
         if (listasd.isEmpty()) {
-            System.out.print("entre bolas");
-            jTextArea1.setText("Disculpe pero no se ha realizado ninguna"
-                    + "\n actualizacion con el agente. \n"+ ",Debe esperar!");
+            
+            jTextArea1.append("Disculpe pero no se ha realizado ninguna"
+                    + "\n"+ "actualizacion con el agente, Debe esperar!");
         } else {
 
             System.out.println(ttt);

@@ -36,9 +36,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -47,22 +47,20 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setEditable(false);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jScrollPane1.setBounds(0, 0, 440, 370);
+        jLayeredPane1.add(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         jButton1.setText("Request");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jButton1.setBounds(340, 20, 94, 29);
-        jLayeredPane1.add(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setEditable(false);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jScrollPane1.setBounds(0, 0, 320, 360);
-        jLayeredPane1.add(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenu1.setText("Archivo");
 
@@ -94,11 +92,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jLayeredPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 455, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+            .add(layout.createSequentialGroup()
+                .add(jLayeredPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 455, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jButton1)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jLayeredPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
+            .add(jLayeredPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
+            .add(layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jButton1)
+                .addContainerGap(321, Short.MAX_VALUE))
         );
 
         pack();
@@ -113,9 +119,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         listasd = cli.iniciarConexion();
         int ttt = listasd.size();
         if (listasd.isEmpty()) {
-            
+
             jTextArea1.append("Disculpe pero no se ha realizado ninguna"
-                    + "\n"+ "actualizacion con el agente, Debe esperar!");
+                    + "\n" + "actualizacion con el agente, Debe esperar!");
         } else {
 
             System.out.println(ttt);
@@ -125,7 +131,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 String qwerty = ial.next().toString();
                 System.out.print(qwerty);
                 jTextArea1.setRows(ret);
-                jTextArea1.append(qwerty + "\n");
+                if (qwerty.equals("fin")) {
+                    jTextArea1.append("----------------------------------------------- \n");
+                } else {
+                    jTextArea1.append(qwerty + "\n");
+                    
+                }
                 ret++;
             }
         }

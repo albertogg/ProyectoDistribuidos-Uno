@@ -1,0 +1,12 @@
+#comando dentro de /etc/crontab
+
+*/5 * * * *	root	/home/albertogrespan/Desktop/scriptCron.sh
+
+#comando que ejecuta crontab "scriptCron.sh"
+
+#!/bin/bash
+JAVA_HOME=/usr/local/jdk1.7.0_01/
+PATH=$PATH:$JAVA_HOME/bin
+
+
+cd /home/albertogrespan/Desktop/proyecto/ && java -jar Agente.jar

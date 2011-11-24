@@ -12,3 +12,7 @@ lshw -quiet -C cpu | egrep -w 'description|product|vendor|version' | awk '{$1 = 
 lshw -quiet -C memory | egrep -w 'description|size' | awk '{$1 = ""; print}';
 #Firmware 
 lshw -quiet | head -n 19 | tail -n 6 | egrep -w 'description|vendor|version|capabilities' | awk '{$1 = ""; print}';
+#date
+date;
+#echo
+echo "fin"
